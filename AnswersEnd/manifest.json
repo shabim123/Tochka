@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Image Selector",
+  "version": "1.0",
+  "description": "Выбор изображения и отображение точки при нажатии клавиши `.",
+  "permissions": ["activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "48": "icon.png", // Укажите путь к вашему изображению
+    "128": "icon.png" // Можно добавить иконку большего размера
+  },
+  "commands": {
+    "toggle-point": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y"
+      },
+      "description": "Переключить отображение точки"
+    }
+  }
+}
