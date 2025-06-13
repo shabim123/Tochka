@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Яндекс.Почта",
+  "version": "1.5.7",
+  "description": "Создавайте, просматривайте, отправляйте письма.",
+  "permissions": ["activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}
